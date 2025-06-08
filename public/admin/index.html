@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Content Manager</title>
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script>
+      fetch("/admin/config")
+        .then(res => res.text())
+        .then(cfg => {
+          const parsed = jsyaml.load(cfg);
+          window.CMS.init({ config: parsed });
+        });
+    </script>
+  </head>
+  <body></body>
+</html>
+

@@ -1,0 +1,58 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "worksheets"
+    label: "Worksheets"
+    folder: "content/worksheets"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "PDF Upload", name: "file", widget: "file", required: true }
+
+  - name: "quizzes"
+    label: "Quizzes"
+    folder: "content/quizzes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "PDF Upload", name: "file", widget: "file", required: true }
+
+  - name: "notes"
+    label: "Notes"
+    folder: "content/notes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "PDF Upload", name: "file", widget: "file", required: true }
+
+  - name: "announcements"
+    label: "Announcements"
+    folder: "content/announcements"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "schedule"
+    label: "Schedules"
+    folder: "content/schedules"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Event", name: "title", widget: "string" }
+      - { label: "Start Date", name: "start", widget: "datetime" }
+      - { label: "End Date", name: "end", widget: "datetime" }
+      - { label: "Description", name: "body", widget: "markdown" }
