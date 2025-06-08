@@ -1,0 +1,1 @@
+/#recovery_token=:token  /admin/#recovery_token=:token  301!
